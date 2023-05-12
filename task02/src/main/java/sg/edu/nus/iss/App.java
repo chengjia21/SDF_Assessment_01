@@ -81,23 +81,35 @@ public class App
 
                 Map<String, Integer> pairCount = new HashMap<>();
                 nextWordFreqMap
+                    .forEach((k1,v1) -> k1.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v1)));
+
+                    // Attempts to group all nextWord that share the same (first) word.
                     // .map(k -> k.toString())
                     // .collect(Collectors.groupingBy(key -> map.get(key)))
                     // .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
-
-                    .forEach((k1,v1) -> k1.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v1)));
-
                     // pairCount.map(Map.Entry::getValue)
                     // .collect(Collectors.toList());
 
-                    Arrays.toString(pairCount)
+                    // Arrays.toString(pairCount);
                     
-                    .collect(Collectors.groupingBy(key -> map.get));
-                    System.out.println(pairCount);
+                    // // .collect(Collectors.groupingBy(key -> map.get));
+                    // System.out.println(pairCount);
 
                     // .forEach((k, v) -> System.out.printf("pair = %s",k));
                     // nextWordFreqMap
                     // .forEach((k, v) -> System.out.println(v));
+
+
+
+                    // Attempts to sum all nextWord frequencies for each (first) word,  
+                    // so probability can be computed, by nextWordFrequency/sum
+                    // int sum = pairCount
+                    //     .values()
+                    //     .stream()
+                    //     // .mapToInt(Integer::parseInt)
+                    //     .mapToInt(num -> Integer.parseInt(num))
+                    //     .sum();
+                    // System.out.println(sum);
 
 
 
