@@ -54,7 +54,7 @@ public class App
 
                 //strips all punctuation and use .LowerCase() to ensure words of different cases treated as the same
                 String fileContent = sbFileContent.toString().toLowerCase();
-                fileContent = fileContent.replaceAll("[\\W]", " ");
+                fileContent = fileContent.replaceAll("\\p{Punct}", " ");
                 String [] fileContentArray = fileContent.split("\\s+");
 
                 
@@ -97,9 +97,15 @@ public class App
                 Map<String, Integer> pairCount = new HashMap<>();
                 nextWordFreqMap
                     // .map(k -> k.toString())
-                    .forEach((k, v) -> System.out.printf("pair = %s",k));
-                    nextWordFreqMap
-                    .forEach((k, v) -> System.out.println(v));
+                    // .collect(Collectors.groupingBy(key -> map.get(key)))
+                    .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
+
+                    .forEach((k,v) -> k.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v)));
+
+
+                    // .forEach((k, v) -> System.out.printf("pair = %s",k));
+                    // nextWordFreqMap
+                    // .forEach((k, v) -> System.out.println(v));
 
 
                     // System.out.println(nextWordFreqMap.get("the"));
