@@ -98,9 +98,9 @@ public class App
                 nextWordFreqMap
                     // .map(k -> k.toString())
                     // .collect(Collectors.groupingBy(key -> map.get(key)))
-                    .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
+                    // .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
 
-                    .forEach((k,v) -> k.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v)));
+                    .forEach((k1,v1) -> k1.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v1)));
 
 
                     // .forEach((k, v) -> System.out.printf("pair = %s",k));
