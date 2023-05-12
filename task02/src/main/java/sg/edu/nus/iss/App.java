@@ -84,11 +84,12 @@ public class App
                     .forEach((k1,v1) -> k1.forEach((k2, v2) -> System.out.println(k2 + "\n    " + v2 + " " + v1)));
 
                     // Attempts to group all nextWord that share the same (first) word.
-                    // .map(k -> k.toString())
-                    // .collect(Collectors.groupingBy(key -> map.get(key)))
-                    // .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
+                    // nextWordFreqMap
+                        // .map(k -> k.toString())
+                        // .collect(Collectors.groupingBy(key -> map.get(key)))
+                        // .collect((k,v) -> Collectors.groupingBy(key -> k.get(key)))
                     // pairCount.map(Map.Entry::getValue)
-                    // .collect(Collectors.toList());
+                        // .collect(Collectors.toList());
 
                     // Arrays.toString(pairCount);
                     
