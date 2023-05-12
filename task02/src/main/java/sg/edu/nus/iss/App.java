@@ -52,7 +52,7 @@ public class App
                 br.close();
                 fr.close();
 
-   
+                //strips all punctuation and use .LowerCase() to ensure words of different cases treated as the same
                 String fileContent = sbFileContent.toString().toLowerCase();
                 fileContent = fileContent.replaceAll("[\\W]", " ");
                 String [] fileContentArray = fileContent.split("\\s+");
@@ -89,12 +89,44 @@ public class App
                     }
                 }
 
-                nextWordFreqMap.forEach((k,v) -> {
-                    System.out.println(k + "[" + v + "]");
-                });
+                // nextWordFreqMap.forEach((k,v) -> {
+                //     System.out.println(k + "[" + v + "]");
+                // });
 
 
-                // System.out.println(nextWordFreqMap.toString());
+                Map<String, Integer> pairCount = new HashMap<>();
+                nextWordFreqMap
+                    // .map(k -> k.toString())
+                    .forEach((k, v) -> System.out.printf("pair = %s",k));
+                    nextWordFreqMap
+                    .forEach((k, v) -> System.out.println(v));
+
+
+                    // System.out.println(nextWordFreqMap.get("the"));
+                // .collect(Collectors.toList());
+
+
+                //     .FlatMap(words -> Arrays.asList(words).stream())
+
+                //     .forEach(word -> {
+                //         int c = pairCount.computeIfAbsent(word, w -> 0);
+                //         pairCount.put(word, c + 1);
+                //     });
+        
+              
+        
+                // for (String k: pairCount.keySet()) 
+                //     System.out.printf("word: %s, count: %d\n", k, pairCount.get(k));
+        
+                // long single = pairCount.keySet().stream()
+                //     .filter((String word) -> pairCount.get(word) == 1)
+                //     .count();
+        
+                // System.out.printf(">>> single words: %d\n", single);
+            
+
+                // System.out.println(Arrays.toString(nextWordFreqMap));
+                // System.out.println(nextWordFreqMap.flatMap(words -> Arrays.asList(words).stream()));
                 // System.out.println(Arrays.asList(nextWordFreqMap) + nextWordFreqMap);
 
 
